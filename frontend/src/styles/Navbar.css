@@ -1,0 +1,384 @@
+/* Navbar.css */
+:root {
+  --primary: #1a2a44; /* Dark blue background */
+  --grey: #b0b7c3; /* Grey for inactive links */
+}
+
+/* Block: navbar */
+.navbar {
+  width: 100%;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 90px; /* Match the height in the design */
+}
+
+/* Element: navbar__left */
+.navbar__left {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 15px;
+}
+
+@media (max-width: 1024px) {
+  .navbar__left {
+    padding-left: 10px;
+    gap: 10px;
+  }
+}
+
+/* Element: navbar__right */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+@media (max-width: 1024px) {
+  .navbar__right {
+    padding-right: 10px;
+  }
+}
+
+/* Element: navbar__logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.navbar__logo-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.navbar__logo-text {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .navbar__logo-text {
+    font-size: 14px;
+  }
+}
+
+/* Element: navbar__nav */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-left: 25px;
+}
+
+@media (max-width: 1024px) {
+  .navbar__nav {
+    display: none;
+  }
+}
+
+/* Element: navbar__link */
+.navbar__link {
+  color: var(--grey); /* Grey for inactive links */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar__link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Modifier: navbar__link--active */
+.navbar__link--active {
+  background-color: #3b82f6; /* Blue for active link */
+  color: white;
+  padding: 10px 15px;
+}
+
+.navbar__link--active:hover {
+  background-color: #2563eb;
+}
+
+/* Element: navbar__actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  .navbar__actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__actions {
+    gap: 6px;
+  }
+}
+
+/* Element: navbar__mobile-menu */
+.navbar__mobile-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .navbar__mobile-menu {
+    display: block;
+  }
+}
+
+.navbar__mobile-menu:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Element: navbar__button */
+.navbar__button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.navbar__button:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar__button-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* Modifier: navbar__button--notification */
+.navbar__button--notification {
+  position: relative;
+}
+
+/* Element: navbar__badge */
+.navbar__badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #EF4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Element: navbar__language */
+.navbar__language {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: white;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .navbar__language {
+    display: none;
+  }
+}
+
+.navbar__language-flag {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.navbar__language-code {
+  font-weight: 500;
+}
+
+.navbar__language-arrow {
+  color: white;
+}
+
+/* Element: navbar__profile */
+.navbar__profile {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.navbar__profile-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+.navbar__profile-button:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 1024px) {
+  .navbar__profile-button {
+    gap: 4px;
+  }
+}
+
+.navbar__profile-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.navbar__profile-name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .navbar__profile-name {
+    display: none;
+  }
+}
+
+.navbar__profile-arrow {
+  color: white;
+  flex-shrink: 0;
+}
+
+/* Element: navbar__dropdown */
+.navbar__dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 140px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 6px 0;
+  z-index: 50;
+}
+
+@media (max-width: 480px) {
+  .navbar__dropdown {
+    width: 120px;
+  }
+}
+
+.navbar__dropdown-item {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.navbar__dropdown-item:hover {
+  background-color: #F9FAFB;
+}
+
+.navbar__dropdown-icon {
+  color: #6B7280;
+  display: flex;
+  justify-items: center;
+}
+
+.navbar__dropdown-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Element: navbar__mobile-nav */
+.navbar__mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 40;
+}
+
+@media (max-width: 480px) {
+  .navbar__mobile-nav {
+    padding: 10px 15px;
+  }
+}
+
+/* Element: navbar__mobile-link */
+.navbar__mobile-link {
+  color: var(--grey);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.navbar__mobile-link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Modifier: navbar__mobile-link--active */
+.navbar__mobile-link--active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.navbar__mobile-link--active:hover {
+  background-color: #2563eb;
+}

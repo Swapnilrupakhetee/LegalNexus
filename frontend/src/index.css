@@ -1,0 +1,10 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --primary: rgba(22, 33, 105, 1);
+;
+}
